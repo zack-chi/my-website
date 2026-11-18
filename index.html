@@ -99,8 +99,8 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: clamp(5px, 0.9vh, 10px) 16px;
-      gap: 6px;
+      padding: clamp(4px, 0.7vh, 9px) 14px;
+      gap: 5px;
       z-index: 20;
       flex-shrink: 0;
     }
@@ -108,11 +108,12 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: clamp(1.1rem, 2vh, 1.32rem);
+      gap: 7px;
+      font-size: clamp(1rem, 1.85vh, 1.28rem);
       font-weight: 900;
       color: var(--accent);
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
     }
 
     .pokeball-icon {
@@ -141,7 +142,7 @@
     .nav-btns {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 5px;
       align-items: center;
     }
 
@@ -149,16 +150,17 @@
       background: var(--panel-bg);
       color: var(--text-main);
       border: 2px solid var(--panel-border);
-      padding: clamp(4px, 0.65vh, 7px) 12px;
+      padding: clamp(3px, 0.52vh, 6px) clamp(8px, 0.9vw, 11px);
       border-radius: 999px;
-      font-size: clamp(0.82rem, 1.4vh, 0.92rem);
+      font-size: clamp(0.74rem, 1.28vh, 0.88rem);
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       transition: transform 0.12s, background 0.2s, box-shadow 0.2s;
       box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      white-space: nowrap;
     }
     .btn:hover {
       transform: translateY(-2px);
@@ -189,9 +191,9 @@
     .battle-stage {
       position: relative;
       width: 100%;
-      flex: 1 1 44%;
-      min-height: 195px;
-      max-height: 325px;
+      flex: 0 1 38%;
+      min-height: clamp(148px, 25vh, 210px);
+      max-height: 310px;
       border-radius: 20px;
       border: 4px solid var(--panel-border);
       background: linear-gradient(180deg, var(--arena-sky-1) 0%, var(--arena-sky-2) 58%, var(--arena-ground) 58%, var(--arena-ground) 100%);
@@ -223,44 +225,47 @@
       position: absolute;
       background: rgba(15, 23, 42, 0.88);
       border: 3px solid var(--panel-border);
-      border-radius: 16px;
-      padding: 10px 14px;
-      min-width: 240px;
+      border-radius: 14px;
+      padding: clamp(5px, 0.85vh, 10px) clamp(9px, 1.1vw, 14px);
+      min-width: clamp(185px, 21vw, 245px);
+      max-width: 31%;
       z-index: 6;
       box-shadow: 0 6px 16px rgba(0,0,0,0.4);
     }
 
     .hud-enemy {
-      top: 14px;
-      left: 16px;
+      top: clamp(8px, 1.3vh, 14px);
+      left: clamp(10px, 1.4vw, 16px);
     }
 
     .hud-player {
-      bottom: 14px;
-      right: 16px;
+      bottom: clamp(8px, 1.3vh, 14px);
+      right: clamp(10px, 1.4vw, 16px);
     }
 
     .hud-title {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 6px;
       font-weight: 800;
-      font-size: 1.05rem;
-      margin-bottom: 6px;
+      font-size: clamp(0.86rem, 1.5vh, 1.05rem);
+      margin-bottom: clamp(3px, 0.45vh, 6px);
     }
 
     .lvl-badge {
       background: var(--accent);
       color: #111;
-      padding: 1px 8px;
+      padding: 1px 7px;
       border-radius: 10px;
-      font-size: 0.82rem;
+      font-size: clamp(0.72rem, 1.2vh, 0.82rem);
       font-weight: 900;
+      white-space: nowrap;
     }
 
     .hp-bar-outer {
       width: 100%;
-      height: 14px;
+      height: clamp(10px, 1.45vh, 14px);
       background: #334155;
       border-radius: 999px;
       overflow: hidden;
@@ -284,13 +289,14 @@
     .hud-sub {
       display: flex;
       justify-content: space-between;
-      font-size: 0.8rem;
+      gap: 6px;
+      font-size: clamp(0.7rem, 1.18vh, 0.8rem);
       color: var(--text-sub);
-      margin-top: 4px;
+      margin-top: clamp(2px, 0.35vh, 4px);
       font-weight: 700;
     }
 
-    /* Sprites & Plates */
+    /* Sprites & Plates (Dedicated non-overlapping columns beside corner HUDs) */
     .ground-plate {
       position: absolute;
       border-radius: 50%;
@@ -299,16 +305,16 @@
       transform: scaleY(0.38);
     }
     .plate-player {
-      width: 210px;
-      height: 110px;
-      bottom: 8px;
-      left: 60px;
+      width: clamp(130px, 17.5vh, 200px);
+      height: clamp(64px, 9.5vh, 102px);
+      bottom: clamp(0px, 0.6vh, 8px);
+      left: clamp(200px, 23.5%, 290px);
     }
     .plate-enemy {
-      width: 190px;
-      height: 95px;
-      top: 120px;
-      right: 85px;
+      width: clamp(120px, 16vh, 185px);
+      height: clamp(60px, 8.5vh, 92px);
+      top: clamp(54px, 34%, 116px);
+      right: clamp(214px, 24.8%, 305px);
     }
 
     .pokemon-sprite-wrap {
@@ -322,17 +328,17 @@
     }
 
     .player-wrap {
-      bottom: clamp(20px, 3vh, 28px);
-      left: 95px;
-      width: clamp(100px, 15vh, 145px);
-      height: clamp(100px, 15vh, 145px);
+      bottom: clamp(10px, 2vh, 26px);
+      left: clamp(225px, 26%, 320px);
+      width: clamp(78px, 14vh, 140px);
+      height: clamp(78px, 14vh, 140px);
     }
 
     .enemy-wrap {
-      top: clamp(24px, 4vh, 42px);
-      right: 110px;
-      width: clamp(100px, 15vh, 145px);
-      height: clamp(100px, 15vh, 145px);
+      top: clamp(10px, 2.4vh, 36px);
+      right: clamp(235px, 27%, 330px);
+      width: clamp(78px, 14vh, 140px);
+      height: clamp(78px, 14vh, 140px);
       transition: top 0.8s cubic-bezier(0.22, 1, 0.36, 1),
                   right 0.8s cubic-bezier(0.22, 1, 0.36, 1),
                   width 0.8s cubic-bezier(0.22, 1, 0.36, 1),
@@ -486,17 +492,18 @@
     .shield-row {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-top: 5px;
-      min-height: 22px;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: clamp(2px, 0.4vh, 5px);
+      min-height: 16px;
     }
     .shield-gem {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.92rem;
-      padding: 1px 6px;
-      border-radius: 8px;
+      font-size: clamp(0.72rem, 1.15vh, 0.88rem);
+      padding: 1px 5px;
+      border-radius: 7px;
       background: rgba(56, 189, 248, 0.22);
       border: 1px solid #38bdf8;
       box-shadow: 0 0 8px rgba(56, 189, 248, 0.45);
@@ -523,7 +530,7 @@
       left: 0;
       right: 0;
       transform: translateY(-50%) scaleY(0);
-      height: 82px;
+      height: clamp(50px, 8.5vh, 80px);
       background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(234, 88, 12, 0.92) 35%, rgba(250, 204, 21, 0.95) 70%, rgba(15, 23, 42, 0.95) 100%);
       border-top: 3px solid #ffffff;
       border-bottom: 3px solid #ffffff;
@@ -531,7 +538,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 18px;
+      gap: 14px;
       pointer-events: none;
       opacity: 0;
       box-shadow: 0 0 40px rgba(250, 204, 21, 0.8);
@@ -546,13 +553,13 @@
       100% { opacity: 0; transform: translateY(-50%) scaleY(0.05) translateX(120px); }
     }
     .cutin-avatar {
-      width: 96px;
-      height: 96px;
+      width: clamp(54px, 9vh, 92px);
+      height: clamp(54px, 9vh, 92px);
       object-fit: contain;
       filter: drop-shadow(0 0 14px #fff);
     }
     .cutin-text {
-      font-size: clamp(1.35rem, 3vw, 2.05rem);
+      font-size: clamp(1.1rem, 2.5vw, 2rem);
       font-weight: 900;
       color: #ffffff;
       text-shadow: 0 3px 0 #000, 0 0 18px #000;
@@ -563,10 +570,10 @@
     /* Pokedex Captured Partner Assist Pop-in */
     .assist-wrap {
       position: absolute;
-      bottom: 108px;
-      left: 18px;
-      width: 96px;
-      height: 96px;
+      bottom: clamp(44px, 8vh, 96px);
+      left: clamp(160px, 18%, 220px);
+      width: clamp(64px, 9.5vh, 94px);
+      height: clamp(64px, 9.5vh, 94px);
       z-index: 14;
       pointer-events: none;
       opacity: 0;
@@ -592,24 +599,28 @@
       align-items: center;
       justify-content: center;
       z-index: 19;
-      padding: 12px;
+      padding: 6px 12px;
       text-align: center;
     }
     .evolution-overlay.show {
       display: flex;
     }
+    .evolution-overlay h2 {
+      font-size: clamp(1rem, 2vh, 1.45rem) !important;
+      margin: 2px 0 !important;
+    }
     .evo-stage-box {
       position: relative;
-      width: 190px;
-      height: 190px;
+      width: clamp(92px, 16vh, 180px);
+      height: clamp(92px, 16vh, 180px);
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .evo-img {
       position: absolute;
-      width: 165px;
-      height: 165px;
+      width: clamp(80px, 14vh, 155px);
+      height: clamp(80px, 14vh, 155px);
       object-fit: contain;
     }
     .evo-img.morph-old {
@@ -748,25 +759,26 @@
     /* Approach Warning Bar at Top of Stage */
     .approach-bar-wrap {
       position: absolute;
-      top: 12px;
-      right: 16px;
-      width: 280px;
+      top: clamp(8px, 1.3vh, 14px);
+      right: clamp(10px, 1.4vw, 16px);
+      width: clamp(195px, 23vw, 275px);
       background: rgba(15, 23, 42, 0.88);
       border: 2px solid #fff;
       border-radius: 12px;
-      padding: 6px 10px;
+      padding: clamp(4px, 0.65vh, 6px) 10px;
       z-index: 7;
     }
     .approach-header {
       display: flex;
       justify-content: space-between;
-      font-size: 0.85rem;
+      gap: 6px;
+      font-size: clamp(0.73rem, 1.25vh, 0.85rem);
       font-weight: 800;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .timer-track {
       width: 100%;
-      height: 10px;
+      height: clamp(7px, 1.1vh, 10px);
       background: #1e293b;
       border-radius: 999px;
       overflow: hidden;
@@ -781,34 +793,41 @@
     /* Equipped Treasure & Stage Badges */
     .stage-info-pill {
       position: absolute;
-      bottom: 14px;
-      left: 16px;
+      bottom: clamp(8px, 1.3vh, 14px);
+      left: clamp(10px, 1.4vw, 16px);
       background: rgba(15, 23, 42, 0.9);
       border: 2px solid var(--accent);
       border-radius: 12px;
-      padding: 6px 12px;
+      padding: clamp(4px, 0.6vh, 6px) 10px;
       z-index: 7;
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
+      gap: 8px;
+      font-size: clamp(0.74rem, 1.25vh, 0.88rem);
       font-weight: 800;
+      max-width: 34%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    /* Question & Answer Control Panel (Viewport-Adaptive Flex) */
+    /* Question & Answer Control Panel (Viewport-Adaptive Flex + Scroll Fallback to Prevent Overlap) */
     .control-panel {
       background: var(--panel-bg);
       border: 4px solid var(--panel-border);
       border-radius: 20px;
-      padding: clamp(8px, 1.3vh, 16px) 20px;
+      padding: clamp(6px, 1.1vh, 14px) clamp(12px, 2vw, 20px);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      gap: clamp(2px, 0.4vh, 6px);
       position: relative;
       box-shadow: 0 12px 32px rgba(0,0,0,0.45);
-      flex: 1 1 56%;
+      flex: 1 1 62%;
       min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     .stats-strip {
@@ -817,58 +836,82 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: clamp(2px, 0.5vh, 6px);
-      padding-bottom: clamp(4px, 0.6vh, 8px);
+      gap: 6px;
+      margin-bottom: clamp(2px, 0.4vh, 5px);
+      padding-bottom: clamp(3px, 0.5vh, 7px);
       border-bottom: 2px dashed rgba(255,255,255,0.15);
       flex-shrink: 0;
     }
 
     .stat-chip {
       background: rgba(255,255,255,0.08);
-      padding: clamp(3px, 0.5vh, 5px) 11px;
+      padding: clamp(2px, 0.45vh, 5px) 10px;
       border-radius: 999px;
       font-weight: 800;
-      font-size: clamp(0.82rem, 1.4vh, 0.94rem);
+      font-size: clamp(0.76rem, 1.3vh, 0.92rem);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .combo-chip {
       color: var(--accent);
-      font-size: clamp(0.9rem, 1.5vh, 1.02rem);
+      font-size: clamp(0.84rem, 1.4vh, 1rem);
     }
 
-    /* Multi-Question Cards Row (Single Row on Desktop so 3-card Boss battles never overflow vertically) */
+    /* Multi-Question Cards Column (Top-to-Bottom Stack, Single-Line Equations, Zero Overlap) */
     .questions-container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       flex-wrap: nowrap;
-      gap: clamp(10px, 1.5vw, 18px);
-      margin: clamp(2px, 0.6vh, 8px) 0;
+      gap: clamp(5px, 0.9vh, 11px);
+      margin: clamp(2px, 0.4vh, 6px) 0;
       width: 100%;
-      flex: 1 1 auto;
-      min-height: 0;
+      flex: 1 0 auto;
     }
 
     .question-card {
       background: rgba(15, 23, 42, 0.95);
       border: 4px solid rgba(255, 255, 255, 0.25);
-      border-radius: 20px;
-      padding: clamp(6px, 1.2vh, 14px) clamp(12px, 2vw, 28px);
+      border-radius: 18px;
+      padding: clamp(5px, 0.95vh, 12px) clamp(16px, 2.8vw, 32px);
       display: flex;
+      flex-wrap: nowrap;
       align-items: center;
       justify-content: center;
-      gap: clamp(8px, 1.2vw, 16px);
-      font-size: clamp(2.1rem, min(4.2vw, 5.2vh), 4.2rem);
+      gap: clamp(8px, 1.3vw, 16px);
+      font-size: clamp(1.65rem, min(4.5vw, 3.85vh), 3.35rem);
       font-weight: 900;
       letter-spacing: 1px;
+      white-space: nowrap;
       transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-      flex: 1 1 0;
-      min-width: 165px;
-      max-width: 390px;
+      flex: 0 0 auto;
+      width: min(94%, 520px);
+    }
+
+    .question-card span {
+      white-space: nowrap;
+    }
+
+    .questions-container[data-qcount="3"] {
+      gap: clamp(4px, 0.65vh, 8px);
+    }
+    .questions-container[data-qcount="3"] .question-card {
+      padding: clamp(4px, 0.7vh, 9px) clamp(16px, 2.5vw, 28px);
+      font-size: clamp(1.5rem, min(4.2vw, 3.2vh), 2.65rem);
+      border-radius: 16px;
+    }
+
+    .questions-container[data-qcount="4"] {
+      gap: clamp(3px, 0.5vh, 6px);
+    }
+    .questions-container[data-qcount="4"] .question-card {
+      padding: clamp(3px, 0.45vh, 6px) clamp(14px, 2.2vw, 24px);
+      font-size: clamp(1.3rem, min(3.8vw, 2.5vh), 2.15rem);
+      border-width: 3px;
+      border-radius: 14px;
     }
 
     .question-card.active {
@@ -1004,14 +1047,16 @@
     /* Voice Pill */
     .voice-bar {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
-      margin-top: clamp(3px, 0.6vh, 8px);
+      justify-content: center;
+      gap: 6px 8px;
+      margin-top: clamp(2px, 0.45vh, 6px);
       background: rgba(0, 0, 0, 0.35);
-      padding: clamp(3px, 0.5vh, 6px) 12px;
+      padding: clamp(3px, 0.45vh, 6px) 12px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.2);
-      font-size: clamp(0.78rem, 1.3vh, 0.88rem);
+      font-size: clamp(0.75rem, 1.25vh, 0.88rem);
       flex-shrink: 0;
     }
 
@@ -1266,8 +1311,8 @@
     }
     .capture-stage-arena {
       position: relative;
-      width: 300px;
-      height: clamp(148px, 23vh, 215px);
+      width: min(300px, 86vw);
+      height: clamp(104px, 18.5vh, 200px);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1277,13 +1322,20 @@
       position: absolute;
       top: 0px;
       left: 50%;
-      width: clamp(96px, 14.5vh, 142px);
-      height: clamp(96px, 14.5vh, 142px);
+      width: clamp(66px, 11.8vh, 136px);
+      height: clamp(66px, 11.8vh, 136px);
       transform: translateX(-50%);
       object-fit: contain;
       z-index: 5;
       filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.55));
       transition: opacity 0.2s;
+    }
+    .capture-overlay h2 {
+      font-size: clamp(0.95rem, 1.85vh, 1.35rem) !important;
+      margin: 4px 0 2px !important;
+    }
+    #captureSub {
+      font-size: clamp(0.76rem, 1.3vh, 0.95rem) !important;
     }
     .capture-target-img.hit-stun {
       animation: targetHitStun 0.85s ease-in-out forwards;
@@ -1388,16 +1440,16 @@
     }
     .capture-stars-row {
       position: absolute;
-      bottom: 86px;
+      bottom: clamp(50px, 8.5vh, 84px);
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 12px;
+      gap: 10px;
       z-index: 6;
       pointer-events: none;
     }
     .capture-star {
-      font-size: 1.5rem;
+      font-size: clamp(1.05rem, 1.9vh, 1.5rem);
       opacity: 0.18;
       transform: scale(0.65);
       filter: grayscale(1);
@@ -1414,8 +1466,8 @@
       filter: grayscale(1) brightness(0.6) !important;
     }
     .big-pokeball {
-      width: 78px;
-      height: 78px;
+      width: clamp(46px, 7.2vh, 76px);
+      height: clamp(46px, 7.2vh, 76px);
       border-radius: 50%;
       background: linear-gradient(to bottom, #ff3860 0%, #ff3860 46%, #1e293b 46%, #1e293b 54%, #ffffff 54%, #e2e8f0 100%);
       border: 4px solid #0f172a;
@@ -1425,8 +1477,8 @@
     }
     .big-pokeball::after {
       content: "";
-      width: 22px;
-      height: 22px;
+      width: clamp(14px, 2.2vh, 22px);
+      height: clamp(14px, 2.2vh, 22px);
       background: #ffffff;
       border: 4px solid #0f172a;
       border-radius: 50%;
@@ -1519,9 +1571,9 @@
       background: radial-gradient(circle at center, rgba(30, 60, 114, 0.96) 0%, rgba(10, 15, 30, 0.99) 100%);
       backdrop-filter: blur(8px);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      padding: 18px;
+      padding: clamp(10px, 2vh, 18px);
       overflow-y: auto;
     }
     .start-screen.hidden {
@@ -1530,10 +1582,11 @@
     .start-container {
       max-width: 860px;
       width: 100%;
+      margin: auto;
       background: rgba(19, 28, 49, 0.95);
       border: 4px solid var(--panel-border);
       border-radius: 28px;
-      padding: 26px 30px;
+      padding: clamp(14px, 2.2vh, 26px) clamp(16px, 2.5vw, 30px);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
       text-align: center;
       position: relative;
@@ -1718,25 +1771,138 @@
       vertical-align: middle;
     }
 
-    @media (max-width: 720px), (max-height: 600px) {
+    /* Laptop & Short-Height Screen Adaptations (Zero Overlap at 720p / 768p / 800p / 900p) */
+    @media (max-height: 820px) {
+      .battle-stage {
+        flex: 0 1 36%;
+        min-height: 146px;
+        max-height: 235px;
+      }
+      .control-panel {
+        flex: 1 1 64%;
+        padding: 6px 14px;
+      }
+      .encounter-intel-card {
+        padding: 9px 16px;
+        gap: 8px;
+      }
+      .feedback-banner {
+        min-height: 30px;
+        margin-bottom: 2px;
+      }
+      .num-key {
+        height: clamp(30px, 4.1vh, 38px);
+        width: clamp(36px, 4.8vh, 46px);
+      }
+      .correction-prompt-box {
+        padding: 3px 12px;
+        font-size: 0.92rem;
+        margin-top: 3px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-height: 690px) {
+      .top-bar {
+        padding: 3px 12px;
+      }
+      .game-wrapper {
+        gap: 5px;
+        padding: 0 12px 5px;
+      }
+      .battle-stage {
+        flex: 0 0 156px;
+        min-height: 142px;
+        max-height: 175px;
+        border-width: 3px;
+      }
+      .hud-box {
+        padding: 4px 9px;
+      }
+      .shield-row {
+        margin-top: 2px;
+        min-height: 14px;
+      }
+      .player-wrap, .enemy-wrap {
+        width: 78px;
+        height: 78px;
+      }
+      .question-card {
+        padding: 4px 16px;
+        font-size: clamp(1.45rem, min(4.2vw, 3.6vh), 2.35rem);
+        border-width: 3px;
+      }
+      .questions-container[data-qcount="3"] .question-card {
+        padding: 3px 14px;
+        font-size: clamp(1.3rem, min(3.8vw, 3vh), 1.95rem);
+      }
+      .questions-container[data-qcount="4"] .question-card {
+        padding: 2px 12px;
+        font-size: clamp(1.15rem, min(3.4vw, 2.5vh), 1.65rem);
+      }
+      .feedback-main {
+        font-size: 0.96rem;
+      }
+      .feedback-sub {
+        font-size: 0.8rem;
+      }
+      .num-key {
+        height: 29px;
+        width: 36px;
+        font-size: 1rem;
+      }
+      .voice-bar {
+        padding: 2px 10px;
+        margin-top: 2px;
+        font-size: 0.74rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hud-box {
+        min-width: 168px;
+        max-width: 34%;
+      }
+      .approach-bar-wrap {
+        width: 178px;
+      }
+      .player-wrap {
+        left: clamp(178px, 24%, 225px);
+      }
+      .plate-player {
+        left: clamp(158px, 21.5%, 205px);
+      }
+      .enemy-wrap {
+        right: clamp(188px, 25%, 235px);
+      }
+      .plate-enemy {
+        right: clamp(170px, 22.8%, 215px);
+      }
+    }
+
+    @media (max-width: 720px), (max-height: 540px) {
       html, body {
         height: auto;
         max-height: none;
         overflow-y: auto;
       }
-      .questions-container {
-        flex-wrap: wrap;
+      .control-panel {
+        overflow-y: visible;
       }
     }
 
     @media (max-width: 680px) {
       .heatmap-grid { grid-template-columns: repeat(3, 1fr); }
-      .battle-stage { height: 250px; min-height: 230px; }
-      .hud-box { min-width: 170px; padding: 7px 10px; }
-      .approach-bar-wrap { width: 175px; }
-      .player-wrap { left: 24px; width: 100px; height: 100px; }
-      .enemy-wrap { right: 32px; width: 100px; height: 100px; }
-      .question-card { min-width: 220px; padding: 8px 16px; }
+      .battle-stage { height: 220px; min-height: 205px; flex: none; }
+      .hud-box { min-width: 150px; max-width: 44%; padding: 5px 8px; }
+      .approach-bar-wrap { width: 158px; }
+      .stage-info-pill { max-width: 48%; font-size: 0.72rem; }
+      .player-wrap { left: 16px; bottom: 42px; width: 84px; height: 84px; }
+      .plate-player { left: 6px; bottom: 32px; width: 110px; height: 55px; }
+      .enemy-wrap { right: 18px; top: 54px; width: 84px; height: 84px; }
+      .plate-enemy { right: 10px; top: 106px; width: 105px; height: 52px; }
+      .question-card { width: 96%; padding: 8px 14px; }
     }
   </style>
 </head>
@@ -4366,6 +4532,7 @@
     function renderEncounterIntelCard(stageState = 'ready') {
       const container = document.getElementById('questionsContainer');
       if (!container || !state.enemy) return;
+      delete container.dataset.qcount;
       const chosen = state.enemy;
       const isBoss = chosen.boss;
       const isCaught = saveData.capturedIds.includes(chosen.id);
@@ -4579,6 +4746,7 @@
     function renderQuestionCards() {
       const container = document.getElementById('questionsContainer');
       container.innerHTML = '';
+      container.dataset.qcount = String(state.questions.length);
       state.questions.forEach((q, idx) => {
         const card = document.createElement('div');
         let cls = 'question-card';
